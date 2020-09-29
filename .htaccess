@@ -1,0 +1,9 @@
+#<IfModule mod_expires.c>
+#  ExpiresActive on
+#  ExpiresByType text/css                  "access plus 1 year"
+#  ExpiresByType application/javascript    "alccess plus 1 year"
+#</IfModule>
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
